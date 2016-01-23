@@ -1,0 +1,23 @@
+<div ng-controller="listController">
+	<h1>{{headerMessage}}</h1>
+	<div class="table-responsive" style="margin-top: 100px;">
+		<table class="table table-bordered table-stripped table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Phone</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="item in addressList">
+				<tr>
+					<td>{{$index + 1}}</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			<tbody>
+		</table>
+	</div>
+</div>
