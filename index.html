@@ -1,9 +1,10 @@
 <html ng-app="addressBookApp">
 	<head>
+	    <base href="/">
 		<title>AddressBook App</title>
 		<link rel="stylesheet" href="css/bootstrap.css">
 	</head>
-	<body ng-controller="mainController">
+	<body>
 		<header>
 			<nav class="navbar navbar-default navbar-static-top">
 			  <div class="container">
@@ -12,15 +13,13 @@
 					</div>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#" class="active"> Home</a></li>
-						<li><a href="#/list">AddressBook List</a></li>
-						<li><a href="#/add">Add New Address</a></li>
+						<li><a href="/list">Address List</a></li>
+						<li><a href="/add">Add New Address</a></li>
 					</ul>
 			  </div>
 			</nav>
 		</header>
 		<div id="main">
-			{{welcomeMessage}}
 			<div ng-view></div>
 		</div>
 	</body>

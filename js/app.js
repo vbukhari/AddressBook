@@ -1,33 +1,31 @@
 var addressBookApp = angular.module('addressBookApp', ['ngRoute']);
 
-addressBookApp.config(function (locationProvider, $routeProvider) {
-	$locationProvider.hashPrefix("!");
-	$locationProvider.html5Mode(false)
+addressBookApp.config(function ($locationProvider, $routeProvider) {
+	$locationProvider.html5Mode(true)
 	$routeProvider
 	.when('/', {
-		templateUrl : 'index.html',
-		controller : 'mainController'
+		templateUrl : 'views/home.html',
+		controller : 'homeController'
 	})
 	.when('/list', {
-		templateUrl : 'list.html',
+		templateUrl : 'views/list.html',
 		controller : 'listController'
 	})
 	.when('/add', {
-		templateUrl : 'add.html'
+		templateUrl : 'views/add.html',
 		controller : 'addController'
 	})
 	.otherwise({
-		redirectTo: '/';
+		redirectTo: '/'
 	});
 });
 
-addressBookApp.controller('mainController', function ($scope) {
-	debugger;
-	$scope.welcomeMessage = 'Welcome My AddressBook App!';
+addressBookApp.controller('homeController', function ($scope) {
+	$scope.welcomeMessage = 'Welcome to AddressBook App';
 });
 
 addressBookApp.controller('listController', function ($scope) {
-	$scope.headerMessage = 'AddressBook List';
+	$scope.headerMessage = 'Address List';
 });
 
 addressBookApp.controller('addController', function ($scope) {
