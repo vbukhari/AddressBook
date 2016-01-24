@@ -1,3 +1,51 @@
-<div>
+<div class="container">
 	<h1 ng-bind="headerMessage"></h1>
+	<br/>
+	<form name="userForm" ng-submit="addUser(userForm)">
+		<div class="form-group col-md-12">
+				<div class="col-md-3">
+					<label>First Name</label>
+					<input class="form-control" name="firstName" ng-model="user.firstName" type="text" ng-pattern="/^[A-z]+$/" placeholder="Ex. John" value="" required/>
+				</div>
+				<div class="col-md-3">
+					<label>Last Name</label>
+					<input class="form-control" name="lastName" ng-model="user.lastName" type="text" ng-pattern="/^[A-z]+$/" placeholder="Ex. Smith" value="" required/>
+				</div>
+				<div class="col-md-2">
+					<label>Middle Initial</label>
+					<input class="form-control" name="middleName" ng-model="user.middleName" type="text" ng-pattern="/^[A-z]+$/" placeholder="Ex. H." value="" required/>
+				</div>
+			<div class="col-md-3 col-md-offset-1">
+				<label>Phone Number</label>
+				<input class="form-control" name="phone" auto-fillable-field ng-model="user.phoneNo" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" value="" required>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+			<div class="col-md-5">
+				<label>Street</label>
+				<input class="form-control" name="streetName" ng-model="user.streetName" type="text" placeholder="Ex. 1234 Pine Dr." value="" required/>
+			</div>
+			<div class="col-md-4">
+				<label>City</label>
+				<input class="form-control" name="cityName" ng-model="user.cityName" type="text" placeholder="Ex. Tampa" value="" required/>
+			</div>
+			<div class="col-md-1">
+				<label>State</label>
+				<input class="form-control" name="stateName" ng-model="user.stateName" type="text" placeholder="Ex. FL" value="" required/>
+			</div>
+			<div class="col-md-2">
+				<label>State</label>
+				<input class="form-control" name="zipCode" ng-model="user.zipCode" type="text" ng-pattern="/^(\d{5}-\d{4}|\d{5})$/" placeholder="Ex. 33609" value="" required/>
+			</div>
+		</div>
+		<div class="form-group col-md-12"  style="margin-top: 20px;">
+			<div class="col-md-1">
+				<button type="submit" class="btn btn-success">Save</button>
+			</div>
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default" ng-click="clear()"> Clear</button>
+			</div>
+		</div>
+	</form>
+
 </div>
